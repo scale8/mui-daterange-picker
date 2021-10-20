@@ -51,16 +51,16 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
     <Paper elevation={5} square>
       <Grid container direction="row" wrap="nowrap">
         <Grid>
-          <Grid container sx={{ padding: '20px 70px' }} alignItems="center">
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
+          <Grid container style={{ padding: '20px 70px' }} alignItems="center">
+            <Grid item style={{ flex: 1, textAlign: 'center' }}>
               <Typography variant="subtitle1">
                 {startDate ? format(startDate, 'MMMM DD, YYYY') : 'Start Date'}
               </Typography>
             </Grid>
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
+            <Grid item style={{ flex: 1, textAlign: 'center' }}>
               <ArrowRightAlt color="action" />
             </Grid>
-            <Grid item sx={{ flex: 1, textAlign: 'center' }}>
+            <Grid item style={{ flex: 1, textAlign: 'center' }}>
               <Typography variant="subtitle1">
                 {endDate ? format(endDate, 'MMMM DD, YYYY') : 'End Date'}
               </Typography>
@@ -75,7 +75,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
               navState={[true, canNavigateCloser]}
               marker={MARKERS.FIRST_MONTH}
             />
-            <Box sx={{
+            <Box style={{
               borderLeft: '1px solid',
               borderColor: 'action.hover',
               marginBottom: 20,
@@ -89,7 +89,7 @@ const Menu: React.FunctionComponent<MenuProps> = (props: MenuProps) => {
             />
           </Grid>
         </Grid>
-        <Box sx={{
+        <Box style={{
           borderLeft: '1px solid',
           borderColor: 'action.hover',
           marginBottom: 20,

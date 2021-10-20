@@ -28,14 +28,14 @@ const Day: React.FunctionComponent<DayProps> = ({
 
   return (
     <Box
-      sx={{
+      style={{
         display: 'flex',
         borderRadius: startOfRange ? '50% 0 0 50%' : endOfRange ? '0 50% 50% 0' : undefined,
         backgroundColor: !disabled && highlighted ? theme.palette.action.hover : undefined,
       }}
     >
       <IconButton
-        sx={{
+        style={{
           height: 36,
           width: 36,
           padding: 0,
@@ -53,7 +53,7 @@ const Day: React.FunctionComponent<DayProps> = ({
         size="large">
         <Typography
           color={!disabled ? 'textPrimary' : 'textSecondary'}
-          sx={{
+          style={{
             lineHeight: 1.6,
             color: !disabled && filled ? theme.palette.primary.contrastText : undefined,
           }}

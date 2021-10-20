@@ -36,11 +36,11 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
   const handleKeyPress = (event: any) => event?.key === 'Escape' && handleToggle();
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box style={{ position: 'relative' }}>
       {
         open && (
           <Box
-            sx={{
+            style={{
               position: 'fixed',
               height: '100vh',
               width: '100vw',
@@ -56,7 +56,7 @@ const DateRangePickerWrapper: React.FunctionComponent<DateRangePickerWrapperProp
         )
       }
 
-      <Box sx={{ position: 'relative', zIndex: 1 }} className={wrapperClassName} >
+      <Box style={{ position: 'relative', zIndex: 1 }} className={wrapperClassName} >
         <DateRangePicker {...props} />
       </Box>
     </Box>

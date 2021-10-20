@@ -42,7 +42,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
   const [back, forward] = props.navState;
 
   return (
-    <Paper square elevation={0} sx={{ width: 290 }}>
+    <Paper square elevation={0} style={{ width: 290 }}>
       <Grid container>
         <Header
           date={date}
@@ -58,7 +58,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           container
           direction="row"
           justifyContent="space-between"
-          sx={{
+          style={{
             marginTop: 10,
             paddingLeft: 30,
             paddingRight: 30,
@@ -76,7 +76,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           container
           direction="column"
           justifyContent="space-between"
-          sx={{
+          style={{
             paddingLeft: 15,
             paddingRight: 15,
             marginTop: 15,
