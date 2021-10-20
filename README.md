@@ -1,4 +1,4 @@
-# Material UI DateRange Picker
+# Material UI (v5) DateRange Picker
 
 A react date range picker implementation using @material-ui.
 
@@ -17,10 +17,10 @@ Check out the project running [here](https://codesandbox.io/s/materialui-dateran
 ## Usage
 
 ```bash
-npm install materialui-daterange-picker --save
+npm install @scale8/mui-daterange-picker --save
 
 # or with yarn
-yarn add materialui-daterange-picker
+yarn add @scale8/mui-daterange-picker
 ```
 
 ## Basic example

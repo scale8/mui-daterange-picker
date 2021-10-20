@@ -1,50 +1,12 @@
 import * as React from 'react';
-import {
-  Paper,
-  Grid,
-  Typography,
-  makeStyles,
-} from '@material-ui/core';
-import {
-  getDate,
-  isSameMonth,
-  isToday,
-  format,
-  isWithinRange,
-} from 'date-fns';
-import {
-  chunks,
-  getDaysInMonth,
-  isStartOfRange,
-  isEndOfRange,
-  inDateRange,
-  isRangeSameDay,
-} from '../utils';
+import {Grid, Paper, Typography} from '@mui/material';
+import {format, getDate, isSameMonth, isToday, isWithinRange,} from 'date-fns';
+import {chunks, getDaysInMonth, inDateRange, isEndOfRange, isRangeSameDay, isStartOfRange,} from '../utils';
 import Header from './Header';
 import Day from './Day';
-
-
-// eslint-disable-next-line no-unused-vars
-import { NavigationAction, DateRange } from '../types';
+import {DateRange, NavigationAction} from '../types';
 
 const WEEK_DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-
-const useStyles = makeStyles(() => ({
-  root: {
-    width: 290,
-  },
-  weekDaysContainer: {
-    marginTop: 10,
-    paddingLeft: 30,
-    paddingRight: 30,
-  },
-  daysContainer: {
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginTop: 15,
-    marginBottom: 20,
-  },
-}));
 
 interface MonthProps {
   value: Date;
@@ -65,8 +27,6 @@ interface MonthProps {
 }
 
 const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
-  const classes = useStyles();
-
   const {
     helpers,
     handlers,
@@ -82,7 +42,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
   const [back, forward] = props.navState;
 
   return (
-    <Paper square elevation={0} className={classes.root}>
+    <Paper square elevation={0} sx={{ width: 290 }}>
       <Grid container>
         <Header
           date={date}
@@ -97,8 +57,12 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           item
           container
           direction="row"
-          justify="space-between"
-          className={classes.weekDaysContainer}
+          justifyContent="space-between"
+          sx={{
+            marginTop: 10,
+            paddingLeft: 30,
+            paddingRight: 30,
+          }}
         >
           {WEEK_DAYS.map((day) => (
             <Typography color="textSecondary" key={day} variant="caption">
@@ -111,12 +75,17 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           item
           container
           direction="column"
-          justify="space-between"
-          className={classes.daysContainer}
+          justifyContent="space-between"
+          sx={{
+            paddingLeft: 15,
+            paddingRight: 15,
+            marginTop: 15,
+            marginBottom: 20,
+          }}
         >
           {chunks(getDaysInMonth(date), 7).map((week, idx) => (
             // eslint-disable-next-line react/no-array-index-key
-            <Grid key={idx} container direction="row" justify="center">
+            <Grid key={idx} container direction="row" justifyContent="center">
               {week.map((day) => {
                 const isStart = isStartOfRange(dateRange, day);
                 const isEnd = isEndOfRange(dateRange, day);

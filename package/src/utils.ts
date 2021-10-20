@@ -14,8 +14,6 @@ import {
   min,
   max,
 } from 'date-fns';
-
-// eslint-disable-next-line no-unused-vars
 import { DateRange } from './types';
 
 export const identity = <T>(x: T) => x;
@@ -26,8 +24,6 @@ export const chunks = <T>(array: ReadonlyArray<T>, size: number): T[][] => (
     (_v, i) => array.slice(i * size, i * size + size),
   )
 );
-
-export const combine = (...args: any[]): string => args.filter(identity).join(' ');
 
 // Date
 export const getDaysInMonth = (date: Date) => {

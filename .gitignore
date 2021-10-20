@@ -25,3 +25,7 @@ yarn-error.log*
 
 # NPM README file
 package/README.md
+
+# IDEs and editors
+/.idea
+/.vscode

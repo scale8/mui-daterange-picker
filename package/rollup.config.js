@@ -7,6 +7,29 @@ import url from 'rollup-plugin-url';
 
 import pkg from './package.json';
 
+const commonjsOptions = {
+  include: 'node_modules/**',
+  // left-hand side can be an absolute path, a path
+  // relative to the current directory, or the name
+  // of a module in node_modules
+  namedExports: {
+    'node_modules/react/index.js': [
+      'cloneElement',
+      'createContext',
+      'Component',
+      'createElement',
+    ],
+    'node_modules/react-dom/index.js': ['render', 'hydrate'],
+    'node_modules/react-is/index.js': [
+      'isElement',
+      'isFragment',
+      'isValidElementType',
+      'ForwardRef',
+      'Memo',
+    ],
+  },
+}
+
 export default {
   input: 'src/index.ts',
   output: [
@@ -32,6 +55,6 @@ export default {
       rollupCommonJSResolveHack: true,
       clean: true,
     }),
-    commonjs(),
+    commonjs(commonjsOptions),
   ],
 };
