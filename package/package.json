@@ -1,6 +1,6 @@
 {
   "name": "@scale8/mui-daterange-picker",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A react date range picker implementation using @mui v5.",
   "author": "alessandro-barzanti",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import {Grid, IconButton, MenuItem, Select} from '@mui/material';
+import {FormControl, Grid, IconButton, MenuItem, Select} from '@mui/material';
 import React from 'react';
 import ChevronLeft from '@mui/icons-material/ChevronLeft';
 import ChevronRight from '@mui/icons-material/ChevronRight';
@@ -68,33 +68,35 @@ const Header: React.FunctionComponent<HeaderProps> = ({
         </IconButton>
       </Grid>
       <Grid item>
-        <Select
-          value={getMonth(date)}
-          onChange={handleMonthChange}
-          MenuProps={{ disablePortal: true }}
-        >
-          {MONTHS.map((month, idx) => (
-            <MenuItem key={month} value={idx}>
-              {month}
-            </MenuItem>
-          ))}
-        </Select>
+        <FormControl variant="standard">
+          <Select
+            value={getMonth(date)}
+            onChange={handleMonthChange}
+            MenuProps={{ disablePortal: true }}
+          >
+            {MONTHS.map((month, idx) => (
+              <MenuItem key={month} value={idx}>
+                {month}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </Grid>
 
       <Grid item>
-        <Select
-          value={getYear(date)}
-          onChange={handleYearChange}
-          MenuProps={{ disablePortal: true }}
-        >
-          {generateYears(date, 30).map((year) => (
-            <MenuItem key={year} value={year}>
-              {year}
-            </MenuItem>
-          ))}
-        </Select>
-
-        {/* <Typography>{format(date, "MMMM YYYY")}</Typography> */}
+        <FormControl variant="standard">
+          <Select
+            value={getYear(date)}
+            onChange={handleYearChange}
+            MenuProps={{ disablePortal: true }}
+          >
+            {generateYears(date, 30).map((year) => (
+              <MenuItem key={year} value={year}>
+                {year}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </Grid>
       <Grid item sx={{ padding: '5px' }}>
         <IconButton

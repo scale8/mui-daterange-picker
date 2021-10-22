@@ -44,7 +44,6 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['emotion-theming'],
   plugins: [
     external(),
     url({ exclude: ['**/*.svg'] }),
