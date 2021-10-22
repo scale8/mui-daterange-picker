@@ -29,7 +29,7 @@ const DefinedRanges: React.FunctionComponent<DefinedRangesProps> = ({
         <ListItemText
           primaryTypographyProps={{
             variant: 'body2',
-            style: {
+            sx: {
               fontWeight: isSameRange(range, selectedRange)
                 ? 'bold'
                 : 'normal',

@@ -42,7 +42,7 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
   const [back, forward] = props.navState;
 
   return (
-    <Paper square elevation={0} style={{ width: 290 }}>
+    <Paper square elevation={0} sx={{ width: 290 }}>
       <Grid container>
         <Header
           date={date}
@@ -58,10 +58,10 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           container
           direction="row"
           justifyContent="space-between"
-          style={{
-            marginTop: 10,
-            paddingLeft: 30,
-            paddingRight: 30,
+          sx={{
+            marginTop: '10px',
+            paddingLeft: '30px',
+            paddingRight: '30px',
           }}
         >
           {WEEK_DAYS.map((day) => (
@@ -76,11 +76,11 @@ const Month: React.FunctionComponent<MonthProps> = (props: MonthProps) => {
           container
           direction="column"
           justifyContent="space-between"
-          style={{
-            paddingLeft: 15,
-            paddingRight: 15,
-            marginTop: 15,
-            marginBottom: 20,
+          sx={{
+            paddingLeft: '15px',
+            paddingRight: '15px',
+            marginTop: '15px',
+            marginBottom: '20px',
           }}
         >
           {chunks(getDaysInMonth(date), 7).map((week, idx) => (

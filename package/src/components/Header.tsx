@@ -53,7 +53,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
 
   return (
     <Grid container justifyContent="space-between" alignItems="center">
-      <Grid item style={{ padding: 5 }}>
+      <Grid item sx={{ padding: '5px' }}>
         <IconButton
           sx={{
             padding: '10px',
@@ -96,7 +96,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
 
         {/* <Typography>{format(date, "MMMM YYYY")}</Typography> */}
       </Grid>
-      <Grid item style={{ padding: 5 }}>
+      <Grid item sx={{ padding: '5px' }}>
         <IconButton
           sx={{
             padding: '10px',

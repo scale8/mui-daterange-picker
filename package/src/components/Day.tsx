@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, IconButton, Typography, useTheme} from '@mui/material';
+import {Box, IconButton, Typography} from '@mui/material';
 
 interface DayProps {
   filled?: boolean;
@@ -24,27 +24,25 @@ const Day: React.FunctionComponent<DayProps> = ({
   onHover,
   value,
 }: DayProps) => {
-  const theme = useTheme();
-
   return (
     <Box
-      style={{
+      sx={{
         display: 'flex',
         borderRadius: startOfRange ? '50% 0 0 50%' : endOfRange ? '0 50% 50% 0' : undefined,
-        backgroundColor: !disabled && highlighted ? theme.palette.action.hover : undefined,
+        backgroundColor: (theme) => !disabled && highlighted ? theme.palette.action.hover : undefined,
       }}
     >
       <IconButton
-        style={{
+        sx={{
           height: 36,
           width: 36,
           padding: 0,
-          border: !disabled && outlined ? `1px solid ${theme.palette.primary.dark}` : undefined,
+          border: (theme) => !disabled && outlined ? `1px solid ${theme.palette.primary.dark}` : undefined,
           ...(!disabled && filled ? {
             '&:hover': {
-              backgroundColor: theme.palette.primary.dark,
+              backgroundColor: (theme) => theme.palette.primary.dark,
             },
-            backgroundColor: theme.palette.primary.dark,
+            backgroundColor: (theme) => theme.palette.primary.dark,
           } : {})
         }}
         disabled={disabled}
@@ -53,9 +51,9 @@ const Day: React.FunctionComponent<DayProps> = ({
         size="large">
         <Typography
           color={!disabled ? 'textPrimary' : 'textSecondary'}
-          style={{
+          sx={{
             lineHeight: 1.6,
-            color: !disabled && filled ? theme.palette.primary.contrastText : undefined,
+            color: (theme) => !disabled && filled ? theme.palette.primary.contrastText : undefined,
           }}
           variant="body2"
         >
